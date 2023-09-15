@@ -91,13 +91,13 @@ int main(int argc, char** argv)
            memcpy((void *)Ccopy, (const void *)C, sizeof(double)*n*n);
 
            // insert timer code here
-
+          std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
 #ifdef BLOCKED
            square_dgemm_blocked(n, b, A, B, C); 
 #else
            square_dgemm(n, A, B, C); 
 #endif
-
+            std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
            // insert timer code here
 
            reference_dgemm(n, 1.0 , Acopy, Bcopy, Ccopy);
@@ -105,6 +105,7 @@ int main(int argc, char** argv)
            // compare your C with that computed by BLAS
            if (check_accuracy(Ccopy, C, n*n) == false)
               printf(" Error: your answer is not the same as that computed by BLAS. \n");
+          printf("Elapsed Time: %.3f sec\n", std::chrono::duration_cast<std::chrono::duration<double> >(end - start).count());
 
 #ifdef BLOCKED
         } // end loop over block sizes
