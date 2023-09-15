@@ -19,7 +19,8 @@ After downloading, cd into the main source directly, then:
 
 > mkdir build  
 > cd build  
-> cmake ../  
+> cmake ../
+> make 
 
 When building on Perlmutter, make sure you are on a GPU node when doing the compilation. Compiling and running your code on the Perlmutter Login nodes is not recommended.  The simplest way to do this is
 grab an interactive GPU node by running the below command after logging into Perlmutter:  
