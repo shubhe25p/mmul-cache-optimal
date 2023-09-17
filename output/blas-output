@@ -1,7 +1,7 @@
 Description:	Reference dgemm.
 
 Working on problem size N=64 
-Elapsed Time: 0.00123 sec
+Elapsed Time: 0.00006 sec
 Working on problem size N=128 
 Elapsed Time: 0.00013 sec
 Working on problem size N=256 
