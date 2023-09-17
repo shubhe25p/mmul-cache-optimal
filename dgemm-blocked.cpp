@@ -1,36 +1,3 @@
-// const char *dgemm_desc = "Blocked dgemm.";
-// /* This routine performs a dgemm operation
-//  *  C := C + A * B
-//  * where A, B, and C are n-by-n matrices stored in column-major format.
-//  * On exit, A and B maintain their input values. */
-// void square_dgemm_blocked(int n, int block_size, double *A, double *B, double *C)
-// {
-//    // insert your code here
-//    for (int i0 = 0; i0 < n; i0 += block_size)
-//    {
-
-//       for (int j0 = 0; j0 < n; j0 += block_size)
-//       {
-
-//          for (int k0 = 0; k0 < n; k0 += block_size)
-//          {
-
-//             for (int j1 = j0; j1 < j0 + block_size; ++j1)
-//             {
-
-//                for (int i1 = i0; i1 < i0 + block_size; ++i1)
-//                {
-
-//                   for (int k1 = k0; k1 < k0 + block_size; ++k1)
-//                   {
-//                      C[n * i1 + j1] += A[n * k1 + j1] * B[n * i1 + k1];
-//                   }
-//                }
-//             }
-//          }
-//       }
-//    }
-// }
 const char *dgemm_desc = "Blocked dgemm.";
 #include <algorithm>
 #include <chrono>
